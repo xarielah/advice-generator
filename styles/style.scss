@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+
+// The designs were created to the following widths:
+
+// - Mobile: 375px
+// - Desktop: 1440px
+
+// ### Primary
+
+// - Light Cyan: hsl(193, 38%, 86%)
+// - Neon Green: hsl(150, 100%, 66%)
+
+// ### Neutral
+
+// - Grayish Blue: hsl(217, 19%, 38%)
+// - Dark Grayish Blue: hsl(217, 19%, 24%)
+
+// Vars:
+
+$bg: hsl(217, 19%, 24%);
+$box: hsl(217, 19%, 38%);
+$neon: hsl(150, 100%, 66%);
+$text: hsl(193, 38%, 86%);
+$btn: 65px;
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Manrope", sans-serif;
+    background-color: $bg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+section {
+    position: absolute;
+    background-color: $box;
+    width: 450px;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    height: max-content;
+
+    h5 {
+        color: $neon;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-bottom: none;
+    }
+
+    p {
+        color: $text;
+        font-size: 28px;
+        margin: 10px 0;
+    }
+
+    .horizontal {
+        display: inline-block;
+        background-color: $text;
+        height: 17.5px;
+        width: 7px;
+        border-radius: 20px;
+        // margin: 0 auto;
+        margin: 10px 2px;
+    }
+
+    .horizontal-wrap {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .horizontal-wrap::before {
+        content: "";
+        display: inline-block;
+        width: 37.5%;
+        height: 0.5px;
+        right: 10px;
+        background-color: $text;
+        position: relative;
+    }
+
+    .horizontal-wrap::after {
+        content: "";
+        display: inline-block;
+        width: 37.5%;
+        background-color: $text;
+        height: 0.5px;
+        left: 10px;
+        position: relative;
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $neon;
+        cursor: pointer;
+        border: none;
+        border-radius: 50%;
+        width: $btn;
+        height: $btn;
+        margin: 0 auto;
+    }
+
+    .button:hover {
+        box-shadow: 0 0 10px $neon;
+        transition: 300ms ease-in-out;
+    }
+
+    @media (min-width: 1440px) {
+        width: 100%;
+    }
+    @media (max-width: 500px) {
+        width: 87.5%;
+    }
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
